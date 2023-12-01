@@ -14,12 +14,16 @@ let adjs = ["great", "big", "small", "beauty"];
 let nouns = ["jogger", "racoon", "mouse", "queen"];
 let exts = [".com", ".es", ".us", ".net"];
 
+let domainnames = [];
 for (let pronoun of pronouns) {
   for (let adj of adjs) {
     for (let noun of nouns) {
       for (let ext of exts) {
-        console.log(`${pronoun}${adj}${noun}${ext}`);
+        domainnames.push(`${pronoun}${adj}${noun}${ext}`);
       }
     }
   }
 }
+document.body.innerHTML = `<ul>${domainnames
+  .map(domainlist => `<li>${domainlist}</li>`)
+  .join(" ")}</ul>`;
